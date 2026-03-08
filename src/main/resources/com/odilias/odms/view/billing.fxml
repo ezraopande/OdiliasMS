@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: transparent;" styleClass="main-content-container" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.odilias.odms.controller.BillingController">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="15.0">
+         <children>
+            <Label text="Billing &amp; Financials" textFill="#2f3640">
+               <font><Font name="System Bold" size="18.0" /></font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#showCreateInvoiceForm" prefHeight="40.0" styleClass="btn-success" text="+ Create New Invoice" />
+         </children>
+      </HBox>
+      <TableView fx:id="billingTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="dateColumn" prefWidth="150.0" text="Date" />
+          <TableColumn fx:id="patientColumn" prefWidth="200.0" text="Patient Name" />
+            <TableColumn fx:id="totalColumn" prefWidth="120.0" text="Total Amount" />
+            <TableColumn fx:id="paidColumn" prefWidth="120.0" text="Paid Amount" />
+            <TableColumn fx:id="balanceColumn" prefWidth="120.0" text="Balance" />
+            <TableColumn fx:id="statusColumn" prefWidth="120.0" text="Status" />
+        </columns>
+      </TableView>
+      <HBox fx:id="actionBox" alignment="CENTER_RIGHT" spacing="15.0" visible="false">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleRecordPayment" prefHeight="45.0" styleClass="btn-primary" text="Record Payment" />
+            <Button mnemonicParsing="false" onAction="#handlePrintInvoice" prefHeight="45.0" styleClass="btn-success" text="Export &amp; Print PDF" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

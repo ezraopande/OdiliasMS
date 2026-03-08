@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: transparent;" styleClass="main-content-container" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.odilias.odms.controller.PatientController">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="20.0">
+         <children>
+            <TextField fx:id="searchField" prefHeight="40.0" prefWidth="350.0" promptText="Search patients by name or ID..." />
+            <Button mnemonicParsing="false" onAction="#handleSearch" prefHeight="40.0" styleClass="btn-primary" text="Search" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#showAddPatientForm" prefHeight="40.0" styleClass="btn-success" text="+ Register New Patient" />
+         </children>
+      </HBox>
+      <TableView fx:id="patientTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="100.0" text="Patient ID" />
+          <TableColumn fx:id="nameColumn" prefWidth="250.0" text="Full Name" />
+            <TableColumn fx:id="ageColumn" prefWidth="80.0" text="Age" />
+            <TableColumn fx:id="genderColumn" prefWidth="100.0" text="Gender" />
+            <TableColumn fx:id="contactColumn" prefWidth="150.0" text="Contact" />
+        </columns>
+      </TableView>
+      <HBox fx:id="patientActionBox" alignment="CENTER_RIGHT" spacing="15.0" visible="false">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleEditPatient" prefHeight="45.0" styleClass="btn-primary" style="-fx-background-color: #f39c12;" text="Edit Details" />
+            <Button mnemonicParsing="false" onAction="#viewPatientDetails" prefHeight="45.0" styleClass="btn-primary" text="View Full Profile" />
+            <Button mnemonicParsing="false" onAction="#handleExportPDF" prefHeight="45.0" styleClass="btn-success" text="Export &amp; Print PDF" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

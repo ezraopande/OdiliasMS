@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="450.0" prefWidth="450.0" spacing="15.0" style="-fx-background-color: white; -fx-padding: 30;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.odilias.odms.controller.EnterLabResultsController">
+   <children>
+      <Label text="Enter Lab Test Results" textFill="#2c3e50">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <VBox spacing="5.0">
+         <children>
+            <Label fx:id="testLabel" text="Test: Full Blood Count" textFill="#3498db">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="patientLabel" text="Patient: John Doe" textFill="#7f8c8d" />
+         </children>
+      </VBox>
+      <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label text="Result Data *" />
+            <TextArea fx:id="resultField" prefHeight="100.0" promptText="Enter detailed test findings..." />
+            <Label text="Reference Range / Units" />
+            <TextField fx:id="rangeField" promptText="e.g. 13.5 - 17.5 g/dL" />
+            <Label text="Clinical Remarks" />
+            <TextArea fx:id="remarksField" prefHeight="80.0" promptText="Any supplementary comments..." />
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_RIGHT" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #95a5a6; -fx-text-fill: white;" text="Cancel" />
+            <Button fx:id="submitBtn" mnemonicParsing="false" onAction="#handleSave" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;" text="Submit Lab Result" />
+         </children>
+      </HBox>
+      <Label fx:id="errorLabel" textFill="#e74c3c" />
+   </children>
+</VBox>

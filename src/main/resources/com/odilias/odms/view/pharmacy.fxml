@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: transparent;" styleClass="main-content-container" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.odilias.odms.controller.PharmacyController">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="20.0">
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Pharmacy &amp; Inventory" textFill="#2f3640">
+                     <font><Font name="System Bold" size="22.0" /></font>
+                  </Label>
+                  <Label text="Medication dispensing and stock control" textFill="#7f8c8d" />
+               </children>
+            </VBox>
+            <Button mnemonicParsing="false" onAction="#handleAddMedication" prefHeight="45.0" styleClass="btn-success" text="+ Add New Drug" />
+         </children>
+      </HBox>
+      
+      <TabPane prefHeight="500.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+          <Tab text="Inventory Stock">
+            <content>
+               <VBox spacing="15.0" style="-fx-padding: 20;">
+                  <children>
+                     <HBox spacing="15.0">
+                        <children>
+                           <TextField fx:id="searchField" prefHeight="40.0" prefWidth="350.0" promptText="Search medication name or batch..." />
+                           <Button mnemonicParsing="false" onAction="#handleSearch" prefHeight="40.0" styleClass="btn-primary" text="Search" />
+                           <Region HBox.hgrow="ALWAYS" />
+                           <Button mnemonicParsing="false" onAction="#handleRefresh" prefHeight="40.0" styleClass="btn-primary" style="-fx-background-color: #95a5a6;" text="Refresh" />
+                        </children>
+                     </HBox>
+                     <TableView fx:id="medicationTable" prefHeight="350.0" prefWidth="760.0" VBox.vgrow="ALWAYS">
+                       <columns>
+                         <TableColumn fx:id="nameCol" prefWidth="250.0" text="Drug Name" />
+                         <TableColumn fx:id="batchCol" prefWidth="120.0" text="Batch #" />
+                         <TableColumn fx:id="qtyCol" prefWidth="100.0" text="Stock Qty" />
+                         <TableColumn fx:id="expCol" prefWidth="150.0" text="Expiry Date" />
+                         <TableColumn fx:id="priceCol" prefWidth="120.0" text="Unit Price" />
+                       </columns>
+                     </TableView>
+                     <HBox fx:id="inventoryActionBox" alignment="CENTER_RIGHT" spacing="15.0" visible="false">
+                        <children>
+                            <Button mnemonicParsing="false" onAction="#handleUpdateStock" prefHeight="45.0" styleClass="btn-primary" style="-fx-background-color: #e67e22;" text="Adjust Stock" />
+                        </children>
+                     </HBox>
+                  </children>
+               </VBox>
+            </content>
+          </Tab>
+          <Tab text="Dispensing (Prescriptions)">
+            <content>
+               <VBox spacing="15.0" style="-fx-padding: 20;">
+                  <children>
+                     <TableView fx:id="prescriptionTable" prefHeight="400.0" prefWidth="760.0" VBox.vgrow="ALWAYS">
+                       <columns>
+                         <TableColumn fx:id="pDateCol" prefWidth="130.0" text="Date prescribed" />
+                         <TableColumn fx:id="pPatientCol" prefWidth="150.0" text="Patient Name" />
+                         <TableColumn fx:id="pPrescriberCol" prefWidth="130.0" text="Prescribed By" />
+                         <TableColumn fx:id="pDrugCol" prefWidth="200.0" text="Drug Name" />
+                         <TableColumn fx:id="pDosageCol" prefWidth="100.0" text="Dosage" />
+                         <TableColumn fx:id="pFreqCol" prefWidth="100.0" text="Freq" />
+                         <TableColumn fx:id="pDurationCol" prefWidth="80.0" text="Duration" />
+                       </columns>
+                     </TableView>
+                     <HBox fx:id="dispenseActionBox" alignment="CENTER_RIGHT" spacing="15.0" visible="false">
+                        <children>
+                            <Button mnemonicParsing="false" onAction="#handleDispense" prefHeight="45.0" styleClass="btn-primary" text="Dispense &amp; Invoice" />
+                        </children>
+                     </HBox>
+                  </children>
+               </VBox>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>

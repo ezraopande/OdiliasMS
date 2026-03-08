@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: transparent;" styleClass="main-content-container" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.odilias.odms.controller.StaffController">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="15.0">
+         <children>
+            <Label text="Staff &amp; User Accounts" textFill="#2f3640">
+               <font><Font name="System Bold" size="18.0" /></font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <TextField fx:id="searchField" prefHeight="40.0" prefWidth="250.0" promptText="Search Staff Name or Username..." />
+            <Button mnemonicParsing="false" onAction="#showAddStaffForm" prefHeight="45.0" styleClass="btn-success" text="+ Register New Staff" />
+         </children>
+      </HBox>
+      <TableView fx:id="staffTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="60.0" text="ID" />
+            <TableColumn fx:id="usernameColumn" prefWidth="120.0" text="Username" />
+          <TableColumn fx:id="nameColumn" prefWidth="180.0" text="Full Name" />
+            <TableColumn fx:id="roleColumn" prefWidth="150.0" text="Role" />
+            <TableColumn fx:id="emailColumn" prefWidth="180.0" text="Email" />
+            <TableColumn fx:id="statusColumn" prefWidth="100.0" text="Status" />
+        </columns>
+      </TableView>
+      <HBox fx:id="actionBox" alignment="CENTER_RIGHT" spacing="15.0" visible="false">
+         <children>
+            <Button fx:id="editBtn" mnemonicParsing="false" onAction="#handleEditStaff" prefHeight="45.0" styleClass="btn-success" style="-fx-background-color: #3498db;" text="Edit Details" />
+            <Button fx:id="activateBtn" mnemonicParsing="false" onAction="#handleActivate" prefHeight="45.0" styleClass="btn-primary" text="Activate Account" />
+            <Button fx:id="unlockBtn" mnemonicParsing="false" onAction="#handleUnlock" prefHeight="45.0" styleClass="btn-success" style="-fx-background-color: #f39c12;" text="Unlock Account" />
+            <Button fx:id="deactivateBtn" mnemonicParsing="false" onAction="#handleDeactivate" prefHeight="45.0" styleClass="btn-danger" text="Deactivate Account" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

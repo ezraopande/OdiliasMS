@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="650.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #f4f7f6; -fx-padding: 30;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.odilias.odms.controller.EditPatientController">
+   <children>
+      <Label text="Edit Patient Profile" textFill="#2c3e50">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label text="Update the clinical and personal details of the patient." textFill="#7f8c8d" />
+      <GridPane hgap="20.0" vgap="15.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox spacing="5.0">
+               <children>
+                  <Label text="Full Name *" />
+                  <TextField fx:id="nameField" promptText="Enter full name" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0" GridPane.columnIndex="1">
+               <children>
+                  <Label text="National ID *" />
+                  <TextField fx:id="nationalIdField" promptText="Enter National ID" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Date of Birth" />
+                  <DatePicker fx:id="dobPicker" prefHeight="25.0" prefWidth="300.0" promptText="Select date of birth" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Age *" />
+                  <TextField fx:id="ageField" promptText="Enter age" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0" GridPane.rowIndex="2">
+               <children>
+                  <Label text="Gender *" />
+                  <ComboBox fx:id="genderComboBox" prefWidth="300.0" promptText="Select gender" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Label text="Contact Number *" />
+                  <TextField fx:id="contactField" promptText="Enter phone number" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0" GridPane.rowIndex="3">
+               <children>
+                  <Label text="Email" />
+                  <TextField fx:id="emailField" promptText="Enter email address" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <Label text="Emergency Contact *" />
+                  <TextField fx:id="emergencyContactField" promptText="Name &amp; Phone" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0" GridPane.rowIndex="4">
+               <children>
+                  <Label text="Blood Group" />
+                  <ComboBox fx:id="bloodGroupComboBox" prefHeight="25.0" prefWidth="300.0" promptText="Select blood group" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <Label text="Address" />
+                  <TextField fx:id="addressField" promptText="Residential address" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0" GridPane.columnSpan="2" GridPane.rowIndex="5">
+               <children>
+                  <Label text="Allergies" />
+                  <TextArea fx:id="allergiesArea" prefHeight="50.0" prefWidth="300.0" promptText="List any allergies" wrapText="true" />
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+      <HBox alignment="CENTER_RIGHT" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-cursor: hand;" text="Cancel" />
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSave" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="Save Patient" />
+         </children>
+      </HBox>
+      <Label fx:id="infoLabel" textFill="#e74c3c" wrapText="true" />
+   </children>
+</VBox>

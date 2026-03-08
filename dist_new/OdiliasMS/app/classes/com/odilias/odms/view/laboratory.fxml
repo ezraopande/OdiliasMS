@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: transparent;" styleClass="main-content-container" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.odilias.odms.controller.LaboratoryController">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="20.0">
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Laboratory Management" textFill="#2c3e50">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="Process lab requests and record results" textFill="#7f8c8d" />
+               </children>
+            </VBox>
+            <Button mnemonicParsing="false" onAction="#handleRefresh" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Refresh List" />
+         </children>
+      </HBox>
+      
+      <TabPane fx:id="labTabPane" prefHeight="500.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+          <Tab text="Active Requests">
+            <content>
+               <VBox spacing="15.0" style="-fx-padding: 20;">
+                  <children>
+                     <TableView fx:id="requestTable" prefHeight="350.0" prefWidth="760.0" VBox.vgrow="ALWAYS">
+                       <columns>
+                         <TableColumn fx:id="patientCol" prefWidth="180.0" text="Patient Name" />
+                         <TableColumn fx:id="testNameCol" prefWidth="200.0" text="Test Requested" />
+                         <TableColumn fx:id="clinicianCol" prefWidth="150.0" text="Requested By" />
+                         <TableColumn fx:id="timeCol" prefWidth="150.0" text="Requested At" />
+                         <TableColumn fx:id="statusCol" prefWidth="100.0" text="Status" />
+                       </columns>
+                     </TableView>
+                     <HBox fx:id="labActionBox" alignment="CENTER_RIGHT" spacing="15.0" visible="false">
+                        <children>
+                           <Button fx:id="enterResultsBtn" mnemonicParsing="false" onAction="#handleEnterResults" prefHeight="45.0" styleClass="btn-primary" text="Enter Test Results" />
+                           <Button mnemonicParsing="false" onAction="#handlePrintLabReport" prefHeight="45.0" styleClass="btn-success" text="Print Lab Report" />
+                        </children>
+                     </HBox>
+                  </children>
+               </VBox>
+            </content>
+          </Tab>
+          <Tab text="Lab Test Catalog">
+            <content>
+               <VBox spacing="15.0" style="-fx-padding: 20;">
+                  <children>
+                     <TableView fx:id="catalogTable" prefHeight="400.0" prefWidth="760.0" VBox.vgrow="ALWAYS">
+                       <columns>
+                         <TableColumn fx:id="catalogNameCol" prefWidth="250.0" text="Test Name" />
+                         <TableColumn fx:id="catalogDescCol" prefWidth="350.0" text="Description" />
+                         <TableColumn fx:id="catalogCostCol" prefWidth="100.0" text="Cost (KES)" />
+                       </columns>
+                     </TableView>
+                  </children>
+               </VBox>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>

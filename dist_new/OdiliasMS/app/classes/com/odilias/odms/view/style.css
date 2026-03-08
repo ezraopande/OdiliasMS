@@ -1,0 +1,221 @@
+.root {
+    -fx-background-color: #f5f6fa;
+    background-color: #f5f6fa;
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.sidebar {
+    -fx-background-color: #2f3640;
+    background-color: #2f3640;
+    -fx-padding: 20 0 0 0;
+    padding: 20px 0 0 0;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-text-fill: #dcdde1;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 15 20;
+    padding: 15px 20px;
+    -fx-cursor: hand;
+    cursor: pointer;
+    -fx-font-size: 14px;
+    font-size: 14px;
+    -fx-font-weight: normal;
+    font-weight: normal;
+}
+
+.nav-button:hover {
+    -fx-background-color: #353b48;
+    background-color: #353b48;
+    -fx-text-fill: white;
+}
+
+.nav-button-active {
+    -fx-background-color: #3498db;
+    background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+
+.main-content-area {
+    -fx-padding: 20;
+    padding: 20px;
+    -fx-background-color: #f5f6fa;
+    background-color: #f5f6fa;
+}
+
+.main-content-area>* {
+    -fx-background-color: transparent;
+    background-color: transparent;
+}
+
+.main-content-container {
+    -fx-padding: 20 0;
+    padding: 20px 0;
+    -fx-spacing: 25;
+}
+
+.card {
+    -fx-background-color: white;
+    background-color: white;
+    -fx-background-radius: 5;
+    border-radius: 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);
+    -fx-padding: 20;
+    padding: 20px;
+}
+
+.header-label {
+    -fx-text-fill: #2f3640;
+    -fx-font-size: 24px;
+    font-size: 24px;
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+
+.dashboard-header {
+    -fx-background-color: white;
+    background-color: white;
+    -fx-padding: 0 40;
+    padding: 0 40px;
+    -fx-border-color: transparent transparent #dcdde1 transparent;
+    border-color: transparent transparent #dcdde1 transparent;
+    -fx-border-width: 0 0 1 0;
+    border-width: 0 0 1px 0;
+}
+
+.table-view {
+    -fx-background-color: white;
+    background-color: white;
+    -fx-border-color: #dcdde1;
+    border-color: #dcdde1;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    border-radius: 5px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f1f2f6;
+    background-color: #f1f2f6;
+    -fx-background-radius: 5 5 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-size: 45px;
+    height: 45px;
+    width: 45px;
+    padding: 0 10px;
+    -fx-border-color: transparent transparent #dcdde1 transparent;
+    border-color: transparent transparent #dcdde1 transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #2f3640;
+    -fx-font-weight: bold;
+    font-weight: bold;
+    -fx-font-size: 14px;
+    font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table-row-cell {
+    -fx-cell-size: 45px;
+    -fx-border-color: transparent transparent #f1f2f6 transparent;
+    border-color: transparent transparent #f1f2f6 transparent;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #3498db;
+    background-color: #3498db;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: white;
+    fill: white;
+}
+
+.table-cell {
+    -fx-padding: 0 15;
+    padding: 0 15px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-text-fill: #2f3640;
+    -fx-font-size: 14px;
+    font-size: 14px;
+}
+
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: white;
+}
+
+.btn-primary {
+    -fx-background-color: #3498db;
+    background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    font-weight: bold;
+    -fx-cursor: hand;
+    cursor: pointer;
+    -fx-padding: 10 20;
+    padding: 10px 20px;
+    -fx-background-radius: 4;
+    border-radius: 4px;
+}
+
+.btn-success {
+    -fx-background-color: #2ecc71;
+    background-color: #2ecc71;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    font-weight: bold;
+    -fx-cursor: hand;
+    cursor: pointer;
+    -fx-padding: 10 20;
+    padding: 10px 20px;
+    -fx-background-radius: 4;
+    border-radius: 4px;
+}
+
+.btn-danger {
+    -fx-background-color: #e74c3c;
+    background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    font-weight: bold;
+    -fx-cursor: hand;
+    cursor: pointer;
+    -fx-padding: 10 20;
+    padding: 10px 20px;
+    -fx-background-radius: 4;
+    border-radius: 4px;
+}
+
+/* Form Elements */
+.text-field,
+.date-picker,
+.date-picker>.text-field {
+    -fx-background-color: white;
+    background-color: white;
+    -fx-border-color: #dcdde1;
+    border-color: #dcdde1;
+    -fx-border-radius: 4;
+    border-radius: 4px;
+    -fx-background-radius: 4;
+    -fx-padding: 8 12;
+    padding: 8px 12px;
+    -fx-font-size: 14px;
+    font-size: 14px;
+}
+
+.text-field:focused,
+.date-picker:focused {
+    -fx-border-color: #3498db;
+    border-color: #3498db;
+    -fx-effect: dropshadow(three-pass-box, rgba(52, 152, 219, 0.2), 5, 0, 0, 0);
+}

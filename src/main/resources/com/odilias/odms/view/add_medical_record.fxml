@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane fitToWidth="true" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.odilias.odms.controller.AddMedicalRecordController">
+   <content>
+      <VBox prefWidth="680.0" spacing="20.0" style="-fx-background-color: white; -fx-padding: 35;">
+         <children>
+            <VBox spacing="5.0">
+               <children>
+                  <Label fx:id="patientNameLabel" text="New Medical Record" textFill="#2c3e50">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+               </children>
+            </VBox>
+
+            <TitledPane animated="false" collapsible="false" text="Patient Vitals" textFill="#2980b9">
+               <content>
+                  <GridPane hgap="25.0" vgap="15.0" style="-fx-padding: 10;">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="60.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="60.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <VBox spacing="8.0">
+                           <children>
+                              <Label text="Blood Pressure (e.g. 120/80)" textFill="#7f8c8d" />
+                              <TextField fx:id="bpField" prefHeight="35.0" promptText="mmHg" style="-fx-background-radius: 5;" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="8.0" GridPane.columnIndex="1">
+                           <children>
+                              <Label text="Temperature (°C)" textFill="#7f8c8d" />
+                              <TextField fx:id="tempField" prefHeight="35.0" promptText="Celsius" style="-fx-background-radius: 5;" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="8.0" GridPane.rowIndex="1">
+                           <children>
+                              <Label text="Pulse Rate (bpm)" textFill="#7f8c8d" />
+                              <TextField fx:id="pulseField" prefHeight="35.0" promptText="Beats per min" style="-fx-background-radius: 5;" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="8.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <Label text="Weight (kg)" textFill="#7f8c8d" />
+                              <TextField fx:id="weightField" prefHeight="35.0" promptText="Kilograms" style="-fx-background-radius: 5;" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </GridPane>
+               </content>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TitledPane>
+
+            <VBox spacing="8.0">
+               <children>
+                  <Label text="Diagnosis *" textFill="#34495e">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="diagnosisArea" prefHeight="100.0" promptText="Enter diagnosis details..." style="-fx-background-radius: 5;" />
+               </children>
+            </VBox>
+
+            <VBox spacing="8.0">
+               <children>
+                  <Label text="Treatment Plan *" textFill="#34495e">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="treatmentArea" prefHeight="100.0" promptText="Enter treatment steps..." style="-fx-background-radius: 5;" />
+               </children>
+            </VBox>
+
+            <VBox spacing="8.0">
+               <children>
+                  <Label text="Prescribe Medication" textFill="#34495e">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="medicationComboBox" prefWidth="610.0" promptText="Select medication from inventory (optional)" />
+                  <HBox spacing="10.0">
+                     <children>
+                        <TextField fx:id="rxDosageField" promptText="Dosage (e.g., 500mg)" HBox.hgrow="SOMETIMES" />
+                        <TextField fx:id="rxFreqField" promptText="Frequency (e.g., 2x a Day)" HBox.hgrow="SOMETIMES" />
+                        <TextField fx:id="rxDurationField" promptText="Duration (e.g., 5 Days)" HBox.hgrow="SOMETIMES" />
+                     </children>
+                  </HBox>
+                  <TextArea fx:id="prescriptionsArea" prefHeight="50.0" promptText="Additional clinical prescription instructions or non-inventory drugs..." style="-fx-background-radius: 5;" />
+               </children>
+            </VBox>
+
+            <VBox spacing="8.0">
+               <children>
+                  <Label text="Request Lab Test" textFill="#34495e">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="labTestComboBox" prefWidth="610.0" promptText="Select a test from catalog (optional)" />
+                  <TextArea fx:id="labResultsArea" prefHeight="60.0" promptText="Additional lab instructions or findings..." style="-fx-background-radius: 5;" />
+               </children>
+            </VBox>
+
+            <Separator prefWidth="200.0" />
+
+            <HBox alignment="CENTER_RIGHT" spacing="15.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 5;" text="Cancel" />
+                  <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#handleSave" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-background-radius: 5;" text="Save Record" />
+               </children>
+            </HBox>
+            <Label fx:id="errorLabel" textFill="#e74c3c" />
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

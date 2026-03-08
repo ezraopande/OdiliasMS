@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="650.0" prefWidth="900.0" spacing="20.0" style="-fx-background-color: #f4f7f6; -fx-padding: 30;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.odilias.odms.controller.PatientProfileController">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="patientNameLabel" text="Patient Name" textFill="#2c3e50">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <HBox spacing="15.0">
+                     <children>
+                        <Label fx:id="patientIdLabel" text="ID: OD-001" textFill="#7f8c8d" />
+                        <Label fx:id="genderAgeLabel" text="Male, 30 Years" textFill="#7f8c8d" />
+                        <Label fx:id="bloodGroupLabel" text="Blood: O+" textFill="#e74c3c" style="-fx-font-weight: bold;" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="15.0">
+                     <children>
+                        <Label fx:id="registeredByLabel" text="Registered By: " textFill="#7f8c8d" />
+                        <Label fx:id="updatedByLabel" text="Last Updated: " textFill="#7f8c8d" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Button mnemonicParsing="false" onAction="#handleClose" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #95a5a6; -fx-text-fill: white;" text="Close" />
+         </children>
+      </HBox>
+
+      <TabPane fx:id="profileTabPane" prefHeight="500.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+          <Tab text="Clinical Visits">
+            <content>
+               <VBox spacing="10.0" style="-fx-padding: 20;">
+                  <children>
+                     <TableView fx:id="visitsTable" VBox.vgrow="ALWAYS">
+                       <columns>
+                         <TableColumn fx:id="visitDateCol" prefWidth="150.0" text="Date" />
+                         <TableColumn fx:id="visitClinicianCol" prefWidth="150.0" text="Clinician" />
+                         <TableColumn fx:id="visitDiagnosisCol" prefWidth="200.0" text="Diagnosis" />
+                         <TableColumn fx:id="visitTreatmentCol" prefWidth="300.0" text="Treatment/Notes" />
+                       </columns>
+                     </TableView>
+                  </children>
+               </VBox>
+            </content>
+          </Tab>
+          <Tab text="Lab History">
+            <content>
+               <VBox spacing="10.0" style="-fx-padding: 20;">
+                  <children>
+                     <TableView fx:id="labTable" VBox.vgrow="ALWAYS">
+                       <columns>
+                         <TableColumn fx:id="labDateCol" prefWidth="150.0" text="Date" />
+                         <TableColumn fx:id="labTestCol" prefWidth="200.0" text="Test Name" />
+                         <TableColumn fx:id="labResultCol" prefWidth="250.0" text="Result Data" />
+                         <TableColumn fx:id="labStatusCol" prefWidth="100.0" text="Status" />
+                       </columns>
+                     </TableView>
+                  </children>
+               </VBox>
+            </content>
+          </Tab>
+          <Tab text="Prescriptions">
+            <content>
+               <VBox spacing="10.0" style="-fx-padding: 20;">
+                  <children>
+                     <TableView fx:id="medsTable" VBox.vgrow="ALWAYS">
+                       <columns>
+                         <TableColumn fx:id="medDateCol" prefWidth="130.0" text="Prescribed" />
+                         <TableColumn fx:id="medNameCol" prefWidth="150.0" text="Medication" />
+                         <TableColumn fx:id="medDosageCol" prefWidth="100.0" text="Dosage" />
+                         <TableColumn fx:id="medStatusCol" prefWidth="90.0" text="Status" />
+                         <TableColumn fx:id="medDispensedByCol" prefWidth="120.0" text="Dispensed By" />
+                         <TableColumn fx:id="medDispensedAtCol" prefWidth="130.0" text="Dispensed At" />
+                       </columns>
+                     </TableView>
+                  </children>
+               </VBox>
+            </content>
+          </Tab>
+          <Tab text="Billing History">
+            <content>
+               <VBox spacing="10.0" style="-fx-padding: 20;">
+                  <children>
+                     <TableView fx:id="billingTable" VBox.vgrow="ALWAYS">
+                       <columns>
+                         <TableColumn fx:id="billDateCol" prefWidth="150.0" text="Date" />
+                         <TableColumn fx:id="billAmountCol" prefWidth="120.0" text="Total (KES)" />
+                         <TableColumn fx:id="billPaidCol" prefWidth="120.0" text="Paid" />
+                         <TableColumn fx:id="billStatusCol" prefWidth="120.0" text="Status" />
+                         <TableColumn fx:id="billMethodCol" prefWidth="150.0" text="Method" />
+                       </columns>
+                     </TableView>
+                  </children>
+               </VBox>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>

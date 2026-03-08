@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="550.0" prefWidth="500.0" spacing="20.0" style="-fx-background-color: white; -fx-padding: 30;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.odilias.odms.controller.BookAppointmentController">
+   <children>
+      <Label text="Schedule New Appointment" textFill="#2c3e50">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <VBox spacing="10.0">
+         <children>
+            <Label text="Select Patient *" />
+            <ComboBox fx:id="patientComboBox" prefWidth="440.0" promptText="Search and select patient" />
+            <Label text="Select Clinical Staff *" />
+            <ComboBox fx:id="staffComboBox" prefWidth="440.0" promptText="Select medical professional" />
+            <HBox spacing="20.0">
+               <children>
+                  <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Date *" />
+                        <DatePicker fx:id="datePicker" prefWidth="210.0" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Time Slot *" />
+                        <ComboBox fx:id="timeComboBox" prefWidth="210.0" promptText="Select time slot" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label text="Reason / Notes" />
+            <TextArea fx:id="reasonArea" prefHeight="100.0" prefWidth="440.0" promptText="Enter reason for visit..." />
+         </children>
+      </VBox>
+      <Separator prefWidth="200.0" />
+      <HBox alignment="CENTER_RIGHT" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-cursor: hand;" text="Cancel" />
+            <Button fx:id="bookBtn" mnemonicParsing="false" onAction="#handleBook" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="Confirm Booking" />
+         </children>
+      </HBox>
+      <Label fx:id="errorLabel" textFill="#e74c3c" />
+   </children>
+</VBox>

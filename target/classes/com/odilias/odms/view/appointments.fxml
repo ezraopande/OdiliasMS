@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: transparent;" styleClass="main-content-container" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.odilias.odms.controller.AppointmentController">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="15.0">
+         <children>
+            <Label text="View Schedule for:" textFill="#2c3e50">
+               <font><Font name="System Bold" size="14.0" /></font>
+            </Label>
+            <DatePicker fx:id="datePicker" onAction="#handleDateChange" prefHeight="40.0" />
+            <Region HBox.hgrow="ALWAYS" />
+            <TextField fx:id="searchField" prefHeight="40.0" prefWidth="200.0" promptText="Search Appointments..." />
+            <Button mnemonicParsing="false" onAction="#showBookAppointmentForm" prefHeight="40.0" styleClass="btn-success" text="+ Book New Appointment" />
+         </children>
+      </HBox>
+      <TableView fx:id="appointmentTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="100.0" text="Appt ID" />
+          <TableColumn fx:id="timeColumn" prefWidth="100.0" text="Time" />
+          <TableColumn fx:id="patientColumn" prefWidth="180.0" text="Patient" />
+            <TableColumn fx:id="staffColumn" prefWidth="150.0" text="Clinical Staff" />
+            <TableColumn fx:id="reasonColumn" prefWidth="200.0" text="Reason" />
+            <TableColumn fx:id="statusColumn" prefWidth="150.0" text="Status" />
+        </columns>
+      </TableView>
+      <HBox fx:id="actionBox" alignment="CENTER_RIGHT" spacing="15.0" visible="false">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleComplete" prefHeight="45.0" styleClass="btn-primary" text="Mark Completed" />
+            <Button mnemonicParsing="false" onAction="#handlePrintSlip" prefHeight="45.0" styleClass="btn-success" text="Export Slip PDF" />
+            <Button mnemonicParsing="false" onAction="#handleReschedule" prefHeight="45.0" styleClass="btn-warning" text="Reschedule" />
+            <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="45.0" styleClass="btn-danger" text="Cancel Appointment" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

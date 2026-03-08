@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="700.0" prefWidth="550.0" spacing="20.0" style="-fx-background-color: white; -fx-padding: 30;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.odilias.odms.controller.CreateInvoiceController">
+   <children>
+      <Label text="Generate New Invoice" textFill="#2c3e50">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      
+      <GridPane hgap="15.0" vgap="25.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="70.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="70.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <children>
+           <VBox spacing="8.0" GridPane.columnSpan="2">
+              <children>
+                 <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Select Patient *" />
+                 <ComboBox fx:id="patientComboBox" prefHeight="40.0" prefWidth="600.0" promptText="Choose patient" style="-fx-background-radius: 5;" />
+              </children>
+           </VBox>
+           <VBox spacing="8.0" GridPane.rowIndex="1">
+              <children>
+                 <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Select Service *" />
+                 <ComboBox fx:id="serviceComboBox" prefHeight="40.0" prefWidth="350.0" promptText="Choose service" style="-fx-background-radius: 5;" />
+              </children>
+           </VBox>
+           <VBox alignment="BOTTOM_LEFT" spacing="8.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <children>
+                 <Button mnemonicParsing="false" onAction="#handleAddItem" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-cursor: hand;" text="+ Add" />
+              </children>
+           </VBox>
+        </children>
+      </GridPane>
+
+      <TableView fx:id="itemTable" prefHeight="250.0" prefWidth="490.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="itemNameCol" prefWidth="340.0" text="Item Name" />
+          <TableColumn fx:id="itemPriceCol" prefWidth="140.0" text="Price (KES)" />
+        </columns>
+      </TableView>
+
+      <HBox alignment="CENTER_RIGHT" spacing="10.0">
+         <children>
+            <Label text="Total: " textFill="#2c3e50">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalLabel" text="KES 0.00" textFill="#27ae60">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+
+      <VBox spacing="15.0">
+         <children>
+            <Separator />
+            <Label style="-fx-font-weight: bold;" text="Payment Details" textFill="#7f8c8d" />
+            <TextField fx:id="paidAmountField" prefHeight="40.0" promptText="Initial Payment Amount (Optional)" style="-fx-background-radius: 5;" />
+            <ComboBox fx:id="paymentMethodComboBox" prefHeight="40.0" prefWidth="490.0" promptText="Select payment method" style="-fx-background-radius: 5;" />
+         </children>
+      </VBox>
+
+      <HBox alignment="CENTER_RIGHT" spacing="15.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 5;" text="Cancel" />
+            <Button fx:id="createBtn" mnemonicParsing="false" onAction="#handleCreate" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-background-radius: 5;" text="Create &amp; Finalize" />
+         </children>
+      </HBox>
+      <Label fx:id="errorLabel" textFill="#e74c3c" />
+   </children>
+</VBox>

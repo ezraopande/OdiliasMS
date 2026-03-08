@@ -1,0 +1,36 @@
+﻿java : Mar 08, 2026 1:45:05 
+AM com.sun.javafx.application
+.PlatformImpl startup
+At line:1 char:1
++ java -cp "target\odms.jar;t
+arget\libs\*" 
+com.odilias.odms.Launcher >  
+...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (Mar 08,  
+   2026 1:...ormImpl start   
+ up:String) [], RemoteExc    
+eption
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+WARNING: Unsupported JavaFX 
+configuration: classes were 
+loaded from 'unnamed module 
+@60df0b8e'
+[Thread-4] INFO com.zaxxer.hi
+kari.HikariDataSource - 
+HikariPool-1 - Starting...
+[Thread-4] INFO com.zaxxer.hi
+kari.pool.HikariPool - 
+HikariPool-1 - Added 
+connection com.mysql.cj.jdbc.
+ConnectionImpl@79632b50
+[Thread-4] INFO com.zaxxer.hi
+kari.HikariDataSource - 
+HikariPool-1 - Start 
+completed.
+HikariCP Connection Pool Initialized!

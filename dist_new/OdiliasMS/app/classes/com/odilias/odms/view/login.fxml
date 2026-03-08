@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="30.0" style="-fx-background-color: #f5f6fa;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.odilias.odms.controller.LoginController">
+   <children>
+      <VBox alignment="CENTER" maxWidth="400.0" spacing="20.0" style="-fx-background-color: white; -fx-padding: 40; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 15, 0, 0, 5);">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+            </ImageView>
+            <Label text="ODILIAS DISPENSARY" textFill="#2f3640">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Separator prefWidth="200.0" />
+            <VBox spacing="5.0">
+               <children>
+                  <Label text="Username" textFill="#7f8c8d" />
+                  <TextField fx:id="usernameField" prefHeight="40.0" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0">
+               <children>
+                  <Label text="Password" textFill="#7f8c8d" />
+                  <PasswordField fx:id="passwordField" prefHeight="40.0" />
+               </children>
+            </VBox>
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#handleLogin" prefHeight="45.0" prefWidth="400.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="Login to System" />
+            <Label fx:id="errorLabel" textFill="#e74c3c" wrapText="true" />
+         </children>
+      </VBox>
+      <Label fx:id="networkRibbon" alignment="CENTER" prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #ff7675; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;" text="Network Connection Error" visible="false" />
+   </children>
+</VBox>

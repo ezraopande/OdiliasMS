@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.odilias.odms.controller.DashboardController">
+   <left>
+      <VBox prefWidth="240.0" spacing="10.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="100.0" spacing="10.0">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox spacing="2.0">
+               <children>
+                  <Button fx:id="homeBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#showHome" prefHeight="45.0" prefWidth="240.0" styleClass="nav-button" text="Dashboard" />
+                  <Button fx:id="patientBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#showPatients" prefHeight="45.0" prefWidth="240.0" styleClass="nav-button" text="Patients" />
+                  <Button fx:id="appointmentBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#showAppointments" prefHeight="45.0" prefWidth="240.0" styleClass="nav-button" text="Appointments" />
+                  <Button fx:id="recordBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#showMedicalRecords" prefHeight="45.0" prefWidth="240.0" styleClass="nav-button" text="Medical Records" />
+                  <Button fx:id="pharmacyBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#showPharmacy" prefHeight="45.0" prefWidth="240.0" styleClass="nav-button" text="Pharmacy" />
+                  <Button fx:id="labBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#showLaboratory" prefHeight="45.0" prefWidth="240.0" styleClass="nav-button" text="Laboratory" />
+                  <Button fx:id="staffBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#showStaff" prefHeight="45.0" prefWidth="240.0" styleClass="nav-button" text="Staff Management" />
+                  <Button fx:id="billingBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#showBilling" prefHeight="45.0" prefWidth="240.0" styleClass="nav-button" text="Billing &amp; Invoices" />
+                  <Button fx:id="reportBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#showReports" prefHeight="45.0" prefWidth="240.0" styleClass="nav-button" text="Reports" />
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#showSettings" prefHeight="45.0" prefWidth="240.0" styleClass="nav-button" text="Settings" />
+               </children>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS" />
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#handleLogout" prefHeight="45.0" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="Logout">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0" styleClass="dashboard-header">
+               <children>
+                  <Label fx:id="headerTitle" text="Dashboard">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label fx:id="userNameLabel" text="Administrator" textFill="#7f8c8d" />
+               </children>
+            </HBox>
+            <StackPane fx:id="contentArea" styleClass="main-content-area" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

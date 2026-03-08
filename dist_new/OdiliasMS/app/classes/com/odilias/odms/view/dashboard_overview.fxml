@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent;" vbarPolicy="NEVER" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.odilias.odms.controller.DashboardOverviewController">
+   <content>
+      <VBox spacing="20.0" styleClass="main-content-container">
+         <children>
+            <HBox spacing="20.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="card" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Total Patients" textFill="#7f8c8d" />
+                        <Label fx:id="totalPatientsLabel" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="0" textFill="#2980b9" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="card" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Today's Appointments" textFill="#7f8c8d" />
+                        <Label fx:id="todayAppointmentsLabel" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="0" textFill="#27ae60" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="card" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Total Collected" textFill="#7f8c8d" />
+                        <Label fx:id="totalPaidLabel" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="KES 0" textFill="#16a085" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="card" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Pending Payments" textFill="#7f8c8d" />
+                        <Label fx:id="pendingPaymentsLabel" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="KES 0" textFill="#e67e22" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox spacing="20.0">
+               <children>
+                  <VBox spacing="10.0" styleClass="card" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Revenue Trend" textFill="#2c3e50">
+                           <font><Font name="System Bold" size="14.0" /></font>
+                        </Label>
+                        <LineChart fx:id="revenueChart" prefHeight="300.0">
+                          <xAxis><CategoryAxis side="BOTTOM" /></xAxis>
+                          <yAxis><NumberAxis side="LEFT" /></yAxis>
+                        </LineChart>
+                     </children>
+                  </VBox>
+                  <VBox spacing="10.0" styleClass="card" prefWidth="300.0">
+                     <children>
+                        <Label text="Payment Status" textFill="#2c3e50">
+                           <font><Font name="System Bold" size="14.0" /></font>
+                        </Label>
+                        <PieChart fx:id="paymentPieChart" prefHeight="250.0" />
+                        <Label fx:id="totalBilledLabel" alignment="CENTER" maxWidth="Infinity" text="Total: KES 0" style="-fx-font-weight: bold;" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox spacing="20.0">
+               <children>
+                  <VBox spacing="10.0" styleClass="card" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Medication Demand" textFill="#2c3e50">
+                           <font><Font name="System Bold" size="14.0" /></font>
+                        </Label>
+                        <BarChart fx:id="drugSalesChart" prefHeight="250.0">
+                          <xAxis><CategoryAxis side="BOTTOM" /></xAxis>
+                          <yAxis><NumberAxis side="LEFT" /></yAxis>
+                        </BarChart>
+                     </children>
+                  </VBox>
+                  <VBox spacing="10.0" styleClass="card" prefWidth="300.0">
+                     <children>
+                        <Label text="Low Stock Alerts" textFill="#c0392b">
+                           <font><Font name="System Bold" size="14.0" /></font>
+                        </Label>
+                        <ListView fx:id="lowStockList" prefHeight="250.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>
